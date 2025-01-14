@@ -34,7 +34,6 @@
 
 import { getSingleProduct } from '@/helpers';
 import Image from 'next/image';
-import { Metadata } from 'next';
 
 type Props = {
     searchParams: Record<string, string>;
@@ -44,7 +43,7 @@ const SingleProduct = async ({ searchParams }: Props) => {
     // Ensure _id is handled correctly
     const _idString = searchParams["_id"];
     const _id = Number(_idString);
-    
+
     // Validate _id before fetching data
     if (isNaN(_id)) {
         return <p className="text-red-500">Invalid Product ID</p>;
