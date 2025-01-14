@@ -36,12 +36,12 @@ import { getSingleProduct } from '@/helpers';
 import Image from 'next/image';
 
 type Props = {
-    searchParams: Record<string, string>;
+    searchParams: Record<string, string | string[]>; // Updated type for flexibility
 };
 
 const SingleProduct = async ({ searchParams }: Props) => {
     // Ensure _id is handled correctly
-    const _idString = searchParams["_id"];
+    const _idString = Array.isArray(searchParams["_id"]) ? searchParams["_id"][0] : searchParams["_id"];
     const _id = Number(_idString);
 
     // Validate _id before fetching data
