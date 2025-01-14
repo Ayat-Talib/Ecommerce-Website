@@ -1,5 +1,3 @@
-import Products from "@/components/Products";
-
 // const getData = async() => {
 //     const res = await fetch("https://jsonserver.reactbd.com/phone")
 //     if (!res.ok){
